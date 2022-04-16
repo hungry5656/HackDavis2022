@@ -15,55 +15,49 @@
         "Distemper":{
             "U16W": {},
             "O16W": {
-                "Vac":[[0, 1], []]
+                "Vac":[[0, 1], [3, 1], [52, 1], [156, 0]]
             }
         },
         "Parvovirus":{
             "U16W": {},
             "O16W": {
-                "Vac":[]
-            }
-        },
-        "Adenovirus, type 1 (CAV-1, canine hepatitis)":{
-            "U16W": {},
-            "O16W": {
-                "Vac":
+                "Vac":[[0, 1], [3, 1], [52, 1], [156, 0]]
             }
         },
         "Adenovirus, type 2 (CAV-2, kennel cough)":{
             "U16W": {},
             "O16W": {
-                "Vac":
+                "Vac":[[0, 1], [3, 1], [52, 1], [156, 0]]
             }
         },
         "Parainfluenza":{
             "U16W": {},
             "O16W": {
-                "Vac":
+                "Vac":[[0, 1], [52, 1], [156, 0]]
             }
         },
         "Bordetella bronchiseptica (kennel cough)":{
             "U16W": {},
             "O16W": {
-                "Vac":
+                "Vac":[[0, 1], [52, 0]]
             }
         },
         "Lyme disease":{
             "U16W": {},
             "O16W": {
-                "Vac":
+                "Vac":[[0, 1], [2, 1], [52, 0]]
             }
         },
         "Leptospirosis":{
             "U16W": {},
             "O16W": {
-                "Vac":
+                "Vac":[[0, 1], [2, 1], [52, 0]]
             }
         },
         "Canine influenza":{
             "U16W": {},
             "O16W": {
-                "Vac":
+                "Vac":[[0, 1], [2, 1], [52, 0]]
             }
         }
     },
