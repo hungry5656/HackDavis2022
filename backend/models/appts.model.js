@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 
 const eventsSchema = new Schema(
   {
-    user: { type: String, required: true },
+    email: { type: String, required: true },
     createDate: { type: Date, required: true },
     apptDate: { type: Date, required: true },
     doseType: { type: String, required: true},

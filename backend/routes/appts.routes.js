@@ -4,18 +4,12 @@ import Event from '../models/appts.model.js';
 const router = express.Router(); 
 
 function getDetailsFromRequest(req) {
-    const name = req.body.name;
-    const owner = req.body.owner; 
-    const attendees = req.body.attendees; 
-    const location = {
-        address : req.body.address,
-        lat     : req.body.lat, 
-        lon     : req.body.lon
-    }
-    const description = req.body.description;
-    const date_time = req.body.date_time;
-
-    return {name, owner, attendees, location, description, date_time};
+    const user = req.body.user; 
+    const createDate = req.body.createDate; 
+    const apptDate = req.body.apptDate; 
+    const doseType = req.body.doseType; 
+    const doseNum = req.body.doseNum; 
+    return { user, createDate, apptDate, doseTpe, doseNum };
 }
 
 // POST request (create)

@@ -8,17 +8,33 @@ import bodyParser from 'body-parser';
 const app = express();
 const port = 5000;
 
+const vaccines = {
+    "Dog": {
+        "Rabies":{
+            "U16W": {
+
+            },
+            "O16W": {
+    
+            }
+        }
+    },
+    "Cat": {
+
+    }
+}
+
 dotenv.config(); //loads variables from env
 app.use(cors());
 
 // Enable pre-flight for the PUT and DELETE routes 
 // IDK this article told me to 
 // https://expressjs.com/en/resources/middleware/cors.html
-app.options('/update_event/:id', cors())
+app.options('/update/:id', cors())
 app.options('/delete/:id', cors())
 
 app.use(bodyParser.json());
-app.use('/events', eventsRouter); 
+app.use('/appts', eventsRouter); 
 
 app.listen(port, () => {
     console.log(`App listening at http://localhost:${port}`);
