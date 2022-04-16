@@ -1,0 +1,44 @@
+{
+    "Dog": {
+        "Rabies 1-year":{
+            "U16W": {},
+            "O16W": {
+                "InitVac":[0, 1],
+                "BoostVac":{}
+            }
+        },
+        "Rabies 3-year":{
+
+        },
+        "Distemper":{
+
+        },
+        "Parvovirus":{
+
+        },
+        "Adenovirus, type 1 (CAV-1, canine hepatitis)":{
+
+        },
+        "Adenovirus, type 2 (CAV-2, kennel cough)":{
+
+        },
+        "Parainfluenza":{
+
+        },
+        "Bordetella bronchiseptica (kennel cough)":{
+
+        },
+        "Lyme disease":{
+
+        },
+        "Leptospirosis":{
+
+        },
+        "Canine influenza":{
+
+        }
+    },
+    "Cat": {
+
+    }
+}
