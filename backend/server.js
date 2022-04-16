@@ -2,7 +2,7 @@ import express from 'express';
 import mongoose from 'mongoose'; 
 import cors from 'cors';
 import dotenv from 'dotenv'; 
-import eventsRouter from './routes/events.routes.js';
+import eventsRouter from './routes/appts.routes.js';
 import bodyParser from 'body-parser'; 
 
 const app = express();
