@@ -12,40 +12,67 @@
             "BoostVac":[[52, 1], [156, 0]]
         },
         "Distemper":{
-            "InitVac":[],
-            "BoostVac":
+            "U16W": {},
+            "O16W": {
+                "InitVac":,
+                "BoostVac":
+            }
         },
         "Parvovirus":{
-            "InitVac":,
-            "BoostVac":
+            "U16W": {},
+            "O16W": {
+                "InitVac":,
+                "BoostVac":
+            }
         },
         "Adenovirus, type 1 (CAV-1, canine hepatitis)":{
-            "InitVac":,
-            "BoostVac":
+            "U16W": {},
+            "O16W": {
+                "InitVac":,
+                "BoostVac":
+            }
         },
         "Adenovirus, type 2 (CAV-2, kennel cough)":{
-            "InitVac":,
-            "BoostVac":
+            "U16W": {},
+            "O16W": {
+                "InitVac":,
+                "BoostVac":
+            }
         },
         "Parainfluenza":{
-            "InitVac":,
-            "BoostVac":
+            "U16W": {},
+            "O16W": {
+                "InitVac":,
+                "BoostVac":
+            }
         },
         "Bordetella bronchiseptica (kennel cough)":{
-            "InitVac":,
-            "BoostVac":
+            "U16W": {},
+            "O16W": {
+                "InitVac":,
+                "BoostVac":
+            }
         },
         "Lyme disease":{
-            "InitVac":,
-            "BoostVac":
+            "U16W": {},
+            "O16W": {
+                "InitVac":,
+                "BoostVac":
+            }
         },
         "Leptospirosis":{
-            "InitVac":,
-            "BoostVac":
+            "U16W": {},
+            "O16W": {
+                "InitVac":,
+                "BoostVac":
+            }
         },
         "Canine influenza":{
-            "InitVac":,
-            "BoostVac":
+            "U16W": {},
+            "O16W": {
+                "InitVac":,
+                "BoostVac":
+            }
         }
     },
     "Cat": {
