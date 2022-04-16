@@ -5,6 +5,8 @@ import dotenv from 'dotenv';
 import eventsRouter from './routes/appts.routes.js';
 import bodyParser from 'body-parser'; 
 
+import vaccineData from './data/vaccine.json';
+
 const app = express();
 const port = 5000;
 
