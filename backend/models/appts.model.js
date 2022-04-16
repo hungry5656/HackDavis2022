@@ -4,15 +4,11 @@ const Schema = mongoose.Schema;
 
 const eventsSchema = new Schema(
   {
-    name: { type: String, required: true },
-    owner: { type: String, required: true },
-    attendees: { type: String, required: true }, 
-    location : {
-      type: {address: String, lat: Number, lon: Number}, 
-      required: true
-    },
-    description: { type: String, required: true}, 
-    date_time:{ type: Date, required: true}, 
+    user: { type: String, required: true },
+    createDate: { type: Date, required: true },
+    apptDate: { type: Date, required: true },
+    doseType: { type: String, required: true},
+    doseNum: { type: Number, required: true},
   },
   {
     timestamps: true,
