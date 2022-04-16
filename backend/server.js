@@ -8,22 +8,6 @@ import bodyParser from 'body-parser';
 const app = express();
 const port = 5000;
 
-const vaccines = {
-    "Dog": {
-        "Rabies":{
-            "U16W": {
-
-            },
-            "O16W": {
-    
-            }
-        }
-    },
-    "Cat": {
-
-    }
-}
-
 dotenv.config(); //loads variables from env
 app.use(cors());
 
