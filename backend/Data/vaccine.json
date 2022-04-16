@@ -3,75 +3,67 @@
         "Rabies 1-year":{
             "U16W": {},
             "O16W": {
-                "InitVac":[0, 1],
-                "BoostVac":[[52, 0]]
+                "Vac":[[0, 1], [52, 0]]
             }
         },
         "Rabies 3-year":{
-            "InitVac":[0, 1],
-            "BoostVac":[[52, 1], [156, 0]]
+            "U16W": {},
+            "O16W":{
+                "Vac":[[0, 1], [52, 1], [156, 0]]
+            }
         },
         "Distemper":{
             "U16W": {},
             "O16W": {
-                "InitVac":,
-                "BoostVac":
+                "Vac":[[0, 1], []]
             }
         },
         "Parvovirus":{
             "U16W": {},
             "O16W": {
-                "InitVac":,
-                "BoostVac":
+                "Vac":[]
             }
         },
         "Adenovirus, type 1 (CAV-1, canine hepatitis)":{
             "U16W": {},
             "O16W": {
-                "InitVac":,
-                "BoostVac":
+                "Vac":
             }
         },
         "Adenovirus, type 2 (CAV-2, kennel cough)":{
             "U16W": {},
             "O16W": {
-                "InitVac":,
-                "BoostVac":
+                "Vac":
             }
         },
         "Parainfluenza":{
             "U16W": {},
             "O16W": {
-                "InitVac":,
-                "BoostVac":
+                "Vac":
             }
         },
         "Bordetella bronchiseptica (kennel cough)":{
             "U16W": {},
             "O16W": {
-                "InitVac":,
-                "BoostVac":
+                "Vac":
             }
         },
         "Lyme disease":{
             "U16W": {},
             "O16W": {
-                "InitVac":,
-                "BoostVac":
+                "Vac":
             }
         },
         "Leptospirosis":{
             "U16W": {},
             "O16W": {
-                "InitVac":,
-                "BoostVac":
+                "Vac":
             }
         },
         "Canine influenza":{
             "U16W": {},
             "O16W": {
-                "InitVac":,
-                "BoostVac":
+                "Vac":
             }
         }
     },
