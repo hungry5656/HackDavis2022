@@ -1,3 +1,5 @@
 # ignore Folder
-# ignoreFolder
+ignoreFolder
+
+!**/VaccineInfo.xlsx
 
