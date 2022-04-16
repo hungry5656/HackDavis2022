@@ -4,12 +4,14 @@ import Appointment from '../models/appts.model.js';
 const router = express.Router(); 
 
 function getDetailsFromRequest(req) {
-    const user = req.body.user; 
-    const createDate = req.body.createDate; 
-    const apptDate = req.body.apptDate; 
+    const email = req.body.email; 
+    const phoneNum = req.body.phoneNum; 
+    const apptDate = req.body.apptDate; // next appointment to notify for
+    const lastDate = req.body.lastDate; // last appointment that occurred 
     const doseType = req.body.doseType; 
     const doseNum = req.body.doseNum; 
-    return { user, createDate, apptDate, doseType, doseNum };
+
+    return { email, phoneNum, apptDate, lastDate, doseType, doseNum };
 }
 
 // POST request (create)
@@ -18,6 +20,7 @@ router.route('/add').post((req, res) => {
     const newAppt = new Appointment(detailsObj);
 
     newAppt.save()
+    // henry(detailsObj)
     .then(() => res.json(newAppt))
     .catch(err => res.status(400).json('Error: ' + err));
     return req, res;
