@@ -5,7 +5,7 @@ const Schema = mongoose.Schema;
 const apptSchema = new Schema(
   {
     email: { type: String, required: true },
-    createDate: { type: Date, required: true },
+    phoneNum: { type: String, required: true },
     apptDate: { type: Date, required: true },
     doseType: { type: String, required: true},
     doseNum: { type: Number, required: true},
