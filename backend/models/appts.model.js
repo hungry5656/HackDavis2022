@@ -2,7 +2,7 @@ import mongoose from 'mongoose';
 
 const Schema = mongoose.Schema;
 
-const eventsSchema = new Schema(
+const apptSchema = new Schema(
   {
     email: { type: String, required: true },
     createDate: { type: Date, required: true },
@@ -15,6 +15,6 @@ const eventsSchema = new Schema(
   }
 );
 
-const Event = mongoose.model("Events", eventsSchema);
+const Appointment = mongoose.model("Appointments", apptSchema);
 //module.exports = Event; 
-export default Event; 
+export default Appointment; 
