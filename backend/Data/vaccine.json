@@ -4,38 +4,48 @@
             "U16W": {},
             "O16W": {
                 "InitVac":[0, 1],
-                "BoostVac":{}
+                "BoostVac":[[52, 0]]
             }
         },
         "Rabies 3-year":{
-
+            "InitVac":[0, 1],
+            "BoostVac":[[52, 1], [156, 0]]
         },
         "Distemper":{
-
+            "InitVac":[],
+            "BoostVac":
         },
         "Parvovirus":{
-
+            "InitVac":,
+            "BoostVac":
         },
         "Adenovirus, type 1 (CAV-1, canine hepatitis)":{
-
+            "InitVac":,
+            "BoostVac":
         },
         "Adenovirus, type 2 (CAV-2, kennel cough)":{
-
+            "InitVac":,
+            "BoostVac":
         },
         "Parainfluenza":{
-
+            "InitVac":,
+            "BoostVac":
         },
         "Bordetella bronchiseptica (kennel cough)":{
-
+            "InitVac":,
+            "BoostVac":
         },
         "Lyme disease":{
-
+            "InitVac":,
+            "BoostVac":
         },
         "Leptospirosis":{
-
+            "InitVac":,
+            "BoostVac":
         },
         "Canine influenza":{
-
+            "InitVac":,
+            "BoostVac":
         }
     },
     "Cat": {
