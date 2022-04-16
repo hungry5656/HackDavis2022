@@ -62,6 +62,41 @@
         }
     },
     "Cat": {
-
+        "Rabies":{
+            "U16W": {},
+            "O16W": {
+                "Vac":
+            }
+        },
+        "Feline Distemper (Panleukopenia)":{
+            "U16W": {},
+            "O16W": {
+                "Vac":
+            }
+        },
+        "Feline Herpesvirus":{
+            "U16W": {},
+            "O16W": {
+                "Vac":
+            }
+        },
+        "Calicivirus":{
+            "U16W": {},
+            "O16W": {
+                "Vac":
+            }
+        },
+        "Feline Leukemia Virus (FeLV)":{
+            "U16W": {},
+            "O16W": {
+                "Vac":
+            }
+        },
+        "Bordetella":{
+            "U16W": {},
+            "O16W": {
+                "Vac":
+            }
+        }
     }
 }
