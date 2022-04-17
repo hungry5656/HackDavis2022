@@ -1,19 +1,27 @@
 import nodemailer from "nodemailer"; 
-import schedule from "node-schedule"; 
+import schedule from "node-schedule";
 
-function sendEmail(data) {
+let emailUser = null; 
+let emailPass = null; 
+
+function _sendEmail(data) {
+    if (emailUser == null || emailPass == null) { 
+        console.log("Please set email credentials first."); 
+        return; 
+    };
+
     let transporter = nodemailer.createTransport({
         service: 'gmail',
         auth: {
-            user: 'vaxremind@gmail.com',
-            pass: 'yorltvywmztxutlf',
+            user: emailUser,
+            pass: emailPass,
         }
     });
 
     let mailOptions = {
-        from: 'vaxremind@gmail.com',
-        to: data.email,
-        subject: 'Vaccination Reminder',
+        from: "VetVax <" + emailUser + ">",
+        to: data.sendTo,
+        subject: data.subject,
         html: data.content
     };
 
@@ -43,4 +51,20 @@ let data = {
 sendEmail(data) 
 */
 
-export default sendEmail; 
+let Emailer = {}
+// We would like to remind you to make an appointment for you ${pet_type} to receive the ${vax_type} about a week from today. 
+Emailer.sendEmail = (sendTo, subject, msgContent) => { 
+    let data = {
+        sendTo: sendTo,
+        subject: subject, 
+        content: msgContent
+    }
+
+    _sendEmail(data); 
+}
+Emailer.setCredentials = (user, pass) => {
+    if (typeof(user) == "string") { emailUser = user; }
+    if (typeof(pass) == "string") { emailPass = pass; }
+    console.log("emailer.js setCredentials was called. Current credentials: " + emailUser + " " + emailPass);
+}
+export default Emailer; 
