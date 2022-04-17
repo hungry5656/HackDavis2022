@@ -1,7 +1,7 @@
 import vaccineData from '../Data/vaccine.json';
 import mongoose from 'mongoose';
 
-function func(){
+function updateDB(){
     // update to the next dose in mongoDB
     let email; // no need
     let phoneNum; // no need
@@ -34,4 +34,4 @@ function func(){
     }
 }
 
-export default func;
+export default updateDB;
