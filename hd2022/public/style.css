@@ -1,0 +1,23 @@
+#navibrand{
+    font-family: 'Alfa Slab One', cursive;
+    font-size: 45px;
+    padding-left: 5%;
+    padding-right: 5%;
+    color: wheat;
+}
+
+#navilist{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 30px;
+    font-weight: bolder;
+    font-style: normal;
+    color: white;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+#naviright{
+    padding-right: 5%;
+    margin-right: 5%;
+}
+
