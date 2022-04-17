@@ -10,7 +10,7 @@ function updateDB(){
     let doseType;
     let doseNum;
     let petType;
-    const VaccineJSON = JSON.parse(vaccineData);
+    const vaccineJSON = JSON.parse(vaccineData);
 
     doseNum++;
     nextApptDate = lastApptDate;
@@ -19,15 +19,15 @@ function updateDB(){
         // want to remind on the first appointment
         return;
     }
-    vaccineVec = VaccineJSON[petType][doseType]["O16W"]["Vac"];
+    vaccineVec = vaccineJSON[petType][doseType]["O16W"]["Vac"];
 
     let currentNum = doseNum;
     for (let i = 0; i < vaccineVec.length; i++){
         if (vaccineVec[i][1] == 0){
-            nextApptDate = lastApptDate + vaccineData[i][0] * 7;
+            nextApptDate = lastApptDate + vaccineVec[i][0] * 7;
         }
         if (currentNum - vaccineVec[i][1] < 0){
-            nextApptDate = lastApptDate + vaccineData[i][0] * 7;
+            nextApptDate = lastApptDate + vaccineVec[i][0] * 7;
         } else {
             currentNum -= vaccineVec[i][1];
         }

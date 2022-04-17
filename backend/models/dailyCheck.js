@@ -2,7 +2,7 @@ import mongoose from 'mongoose';
 import updateDB from './updateDB';
 
 function dailyCheck(){
-    
+    let todayDate;
     let email;
     let phoneNum;
     let lastApptDate;
