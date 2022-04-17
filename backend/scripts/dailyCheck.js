@@ -1,6 +1,7 @@
 import mongoose from 'mongoose';
 import schedule from "node-schedule";
 import Appointment from '../models/appts.model'
+import updateDB from "./updateDB.js";
 /*
 Time check on daily basis
 For reminder: (every day)
@@ -15,7 +16,7 @@ Nothing
 
 function dailyCheck(){
     let today = Date(); 
-    let todayDateString = DateConvertTostr(today); 
+    let todayDateString = dateConvertTostr(today); 
 
     // Find all documents of type Appointment with nextApptDate = todayDateString
     Appointment.find({nextApptDate: todayDateString})
