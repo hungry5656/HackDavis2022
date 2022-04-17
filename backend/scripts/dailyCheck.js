@@ -3,6 +3,7 @@ import schedule from "node-schedule";
 import Appointment from '../models/appts.model.js'
 import updateDB from "./updateDB.js";
 import Emailer from "./emailer.js"; 
+import SMSsender from './SMS.js';
 
 /*
 Time check on daily basis
@@ -34,10 +35,19 @@ function dailyCheck(){
             // Send reminder
             Emailer.sendEmail(
                 appt.email, 
-                "Vaccination Reminder for ", 
-                "<p> This is a testing email </p>"
+                "Vaccination Reminder", 
+                ` <p style="text-indent: 2em;"> Dear ${appt.userName} </p>
+                <p style="text-indent: 2em;">We're so happy your ${appt.petType} ${appt.petName} will be receiving ${appt.doseType} vaccination tomorrow.</p>
+                <p style="text-indent: 2em;">Don't forget to bring pet to receive the vaccination</p>
+                <p> </p>
+                `
             );
-            console.log("Reminder dispatched");    
+            console.log("Reminder dispatched");
+            SMSsender.sendSMS(
+                appt.phoneNum,
+                ` Hi, this is a vaccination reminder: ${appt.userName} on ${appt.nextApptDate}. ${appt.doseType} vaccination. Don't forget to bring your ${appt.petType} ${appt.petName} to receive the vaccination.
+                `
+            )  
         }
     )
 }
