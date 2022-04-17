@@ -2,6 +2,8 @@ import mongoose from 'mongoose';
 import schedule from "node-schedule";
 import Appointment from '../models/appts.model.js'
 import updateDB from "./updateDB.js";
+import Emailer from "./emailer.js"; 
+
 /*
 Time check on daily basis
 For reminder: (every day)
@@ -30,6 +32,11 @@ function dailyCheck(){
     Appointment.find({nextApptDate: nextWeekDateString}).array.forEach(
         (appt) => {
             // Send reminder
+            /*Emailer.sendEmail(
+                appt.email, 
+                "Test Email", 
+                "<p> This is a testing email </p>"
+            );*/
             console.log("Reminder dispatched");    
         }
     )

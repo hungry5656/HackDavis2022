@@ -40,7 +40,6 @@ connection.once("open", () => {
 const emailUser = process.env.EMAIL_AUTH_USER;
 const emailPass =  process.env.EMAIL_AUTH_PASS;
 Emailer.setCredentials(emailUser, emailPass); 
-Emailer.sendEmail("nldcruz@ucdavis.edu", "Test Email", "<p> This is a testing email </p>");
 // Final recurrence scheudling
 const rule = new RecurrenceRule();
 rule.day = 1;

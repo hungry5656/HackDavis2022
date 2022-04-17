@@ -8,7 +8,7 @@ function getDetailsFromRequest(req) {
     const email = req.body.email; 
     const phoneNum = req.body.phoneNum; 
     const doseType = req.body.doseType; 
-    const doseNum = req.body.doseNum; 
+    const doseNum = req.body.doseNum + 1;     
     const petType = req.body.petType;
 
     // One of these MUST be provided by the user
@@ -24,7 +24,7 @@ function getDetailsFromRequest(req) {
     const apptDate = req.body.nextApptDate; 
     
     // Detect invalid input
-    if ((doseNum > 0 && lastDate == null) || (doseNum == 0 && apptDate == null) || doseNum < 0) { return null; }
+    if ((doseNum > 1 && lastDate == null) || (doseNum == 1 && apptDate == null) || doseNum < 1) { return null; }
     
     return { email, phoneNum, apptDate, lastDate, doseType, doseNum, petType};
 }
