@@ -65,6 +65,6 @@ Emailer.sendEmail = (sendTo, subject, msgContent) => {
 Emailer.setCredentials = (user, pass) => {
     if (typeof(user) == "string") { emailUser = user; }
     if (typeof(pass) == "string") { emailPass = pass; }
-    console.log("emailer.js setCredentials was called. Current credentials: " + emailUser + " " + emailPass);
+    //console.log("emailer.js setCredentials was called. Current credentials: " + emailUser + " " + emailPass);
 }
 export default Emailer; 
