@@ -1,9 +1,11 @@
+
 # VetVax
-- it is a full website to remind your next vaccine appointment automatically.
-- It 
+- It is a full website to record & remind your pets' next vaccine appointment.
+- It can calculate the time interval between two vaccination, depending on the type of your pet and vaccination you will receive.
+- It can remind you via SMS&Email automatically when the next Vaccination day is coming.
 
-## What can our project do?
-- 
+## How we built it?
+We used Javascript, MongoDB, node.js.
 
-## What tools and language we use
-- For backend, we mainly use node.js based on javascript to 
+
+
