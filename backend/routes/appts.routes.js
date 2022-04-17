@@ -8,8 +8,10 @@ function getDetailsFromRequest(req) {
     const email = req.body.email; 
     const phoneNum = req.body.phoneNum; 
     const doseType = req.body.doseType; 
-    const doseNum = req.body.doseNum + 1;     
+    const doseNum = req.body.doseNum;     
     const petType = req.body.petType;
+    const userName = req.body.userName; 
+    const petName = req.body.petName; 
 
     // One of these MUST be provided by the user
     // depending on if the first dose has been taken or not 
@@ -24,9 +26,9 @@ function getDetailsFromRequest(req) {
     const apptDate = req.body.nextApptDate; 
     
     // Detect invalid input
-    if ((doseNum > 1 && lastDate == null) || (doseNum == 1 && apptDate == null) || doseNum < 1) { return null; }
+    if ((doseNum > 0 && lastDate == null) || (doseNum == 0 && apptDate == null) || doseNum < 0) { return null; }
     
-    return { email, phoneNum, apptDate, lastDate, doseType, doseNum, petType};
+    return { email, phoneNum, userName, petName, lastDate, apptDate, doseType, doseNum, petType};
 }
 
 // POST request (create)
@@ -37,9 +39,11 @@ router.route('/add').post((req, res) => {
         return req, res;
     } 
     const newAppt = new Appointment(detailsObj);
-
     newAppt.save()
-    .then(() => res.json(newAppt))
+    .then(() => {
+        res.json(newAppt);
+        updateDB(newAppt);
+    })
     .catch(err => res.status(400).json('Error: ' + err));
 
     return req, res;

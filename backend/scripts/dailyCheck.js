@@ -32,11 +32,11 @@ function dailyCheck(){
     Appointment.find({nextApptDate: nextWeekDateString}).array.forEach(
         (appt) => {
             // Send reminder
-            /*Emailer.sendEmail(
+            Emailer.sendEmail(
                 appt.email, 
-                "Test Email", 
+                "Vaccination Reminder for ", 
                 "<p> This is a testing email </p>"
-            );*/
+            );
             console.log("Reminder dispatched");    
         }
     )

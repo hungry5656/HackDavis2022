@@ -25,14 +25,15 @@ function updateDB(appt){
     console.log(obj); // Debug
 
     obj.doseNum++; // We are now reminding for the (n + 1)th dose
-    obj.lastApptDate = obj.nextApptDate;
 
-    /* Don't seem to need this 
     if (obj.doseNum == 1) {
         appt = updateAppt(appt, obj);
         return appt; 
     }
-    */
+    
+    // Only do this if doseNum > 1 
+    // Otherwise lastApptDate = nextApptDate at the end of updateDB
+    obj.lastApptDate = obj.nextApptDate;
     
     // Higher order dose, need to calculate next date
     let vaccineVec = vaccineJSON[obj.petType][obj.doseType]["O16W"]["Vac"];
