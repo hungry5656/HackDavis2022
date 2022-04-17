@@ -1,5 +1,6 @@
 import mongoose from 'mongoose';
 import schedule from "node-schedule";
+import updateDB from "updateDB.js"; 
 import Appointment from '../models/appts.model'
 /*
 Time check on daily basis
@@ -20,7 +21,7 @@ function dailyCheck(){
     // Find all documents of type Appointment with nextApptDate = todayDateString
     Appointment.find({nextApptDate: todayDateString})
     .then((appt) => {
-        const email = appt.email; 
+        
     })
     .catch((err) => {
         console.log('Error: ' + err)
