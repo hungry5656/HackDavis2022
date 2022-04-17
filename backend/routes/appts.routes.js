@@ -26,6 +26,7 @@ router.route('/add').post((req, res) => {
     return req, res;
 });
 
+/*
 // PUT request (update)
 router.route('/update/:id').put((req, res) => {
     Appointment.findById(req.params.id)
@@ -46,6 +47,7 @@ router.route('/get/:id').get((req, res) => {
         .then((appt)=>res.json(appt))
         .catch((err)=>res.status(400).json('Error: ' + err));
 });
+*/
 
 // DELETE request
 router.route('/delete/:id').delete((req, res) => {

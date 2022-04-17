@@ -19,13 +19,11 @@ function dailyCheck(){
     let todayDateString = dateConvertToString(today); 
 
     // Find all documents of type Appointment with nextApptDate = todayDateString
-    Appointment.find({nextApptDate: todayDateString})
-    .then((appt) => {
-        
-    })
-    .catch((err) => {
-        console.log('Error: ' + err)
-    })
+    Appointment.find({nextApptDate: todayDateString}).array.forEach(
+        (appt) => {
+            
+        }
+    );   
 }
 
 
