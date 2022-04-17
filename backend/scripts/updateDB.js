@@ -15,14 +15,13 @@ function updateDB(obj){
     let currentNum = obj.doseNum;
     for (let i = 0; i < vaccineVec.length; i++){
         if (vaccineVec[i][1] == 0){
-            obj.nextApptDate = obj.nextApptDate.addDays(vaccineVec[i][0] * 7);
-            console.log("wow");
+            let days = vaccineVec[i][0] * 7;
+            obj.nextApptDate = obj.nextApptDate.addDays(days);
             return;
         }
         if (currentNum - vaccineVec[i][1] < 0){
             let days = vaccineVec[i][0] * 7;
             obj.nextApptDate = obj.nextApptDate.addDays(days);
-            console.log(days);
             return;
         } else {
             currentNum -= vaccineVec[i][1];
