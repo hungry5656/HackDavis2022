@@ -15,7 +15,7 @@ Nothing
 */
 
 function dailyCheck(){
-    let today = Date(); 
+    let today = new Date.now(); 
     let todayDateString = dateConvertToString(today); 
 
     // Find all documents of type Appointment with nextApptDate = todayDateString

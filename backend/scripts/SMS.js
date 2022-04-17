@@ -1,7 +1,7 @@
 var schedule = require('node-schedule');
 
 const accountSid = 'AC613a84670625eceacc958d8adace6c12';
-const authToken = '15cda1e40e6473681279429f21cd1dff';
+const authToken = '7add8275886c867268f851abc640c94b';
 const client = require('twilio')(accountSid, authToken);
 
 
