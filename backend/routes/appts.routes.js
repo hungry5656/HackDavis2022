@@ -10,8 +10,9 @@ function getDetailsFromRequest(req) {
     const lastDate = req.body.lastDate; // last appointment that occurred 
     const doseType = req.body.doseType; 
     const doseNum = req.body.doseNum; 
+    const petType = req.body.petType;
 
-    return { email, phoneNum, apptDate, lastDate, doseType, doseNum };
+    return { email, phoneNum, apptDate, lastDate, doseType, doseNum, petType};
 }
 
 // POST request (create)
