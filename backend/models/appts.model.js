@@ -7,8 +7,8 @@ const apptSchema = new Schema(
     email: { type: String, required: true },
     phoneNum: { type: String, required: true },
     // Save dates as string for simplicity
-    lastApptDate: { type: String, required: true }, 
-    nextApptDate: { type: String, required: true }, // subtract 7d from this to get notification date
+    lastApptDate: { type: String, required: false }, 
+    nextApptDate: { type: String, required: false }, // subtract 7d from this to get notification date
     doseType: { type: String, required: true},
     doseNum: { type: Number, required: true},
     petType: { type: String, required: true},

@@ -36,7 +36,8 @@ connection.once("open", () => {
 });
 const rule = new RecurrenceRule();
 rule.day = 1;
-
+/*
 const job = schedule.scheduleJob(rule, function(){
     dailyCheck();
 });
+*/

@@ -1,9 +1,14 @@
 import mongoose from 'mongoose';
 
-const vaccineData = require("../Data/vaccine.json")
+import vaccineJSON from "../Data/vaccine.js"; 
+//let vaccineJSON = require("../Data/vaccine.json"); 
+/*fetch("../Data/vaccine.json")
+.then((response) => {
+    vaccineJSON = response.json(); 
+});*/
+
 function updateDB(appt){
     // update to the next dose in mongoDB
-    const vaccineJSON = vaccineData;
     
     /*// Convert appt into an obj
     let obj = {

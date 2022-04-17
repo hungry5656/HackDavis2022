@@ -1,6 +1,6 @@
 import mongoose from 'mongoose';
 import schedule from "node-schedule";
-import Appointment from '../models/appts.model'
+import Appointment from '../models/appts.model.js'
 import updateDB from "./updateDB.js";
 /*
 Time check on daily basis

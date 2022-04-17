@@ -1,13 +1,18 @@
 import express from 'express'
 import Appointment from '../models/appts.model.js';
+import updateDB from '../scripts/updateDB.js';
 
 const router = express.Router(); 
 
 function getDetailsFromRequest(req) {
     const email = req.body.email; 
     const phoneNum = req.body.phoneNum; 
+
+    // these need to be added by the server
     const apptDate = req.body.apptDate; // next appointment to notify for
     const lastDate = req.body.lastDate; // last appointment that occurred 
+    //
+    
     const doseType = req.body.doseType; 
     const doseNum = req.body.doseNum; 
     const petType = req.body.petType;
@@ -25,6 +30,15 @@ router.route('/add').post((req, res) => {
     .catch(err => res.status(400).json('Error: ' + err));
     return req, res;
 });
+
+// TESTING PUT request (run updatedb by object id)
+router.route('/update/:id').post((req, res) => {
+    Appointment.findById(req.params.id).then(
+        appt => {
+            updateDB(appt); 
+        }
+    )
+})
 
 /*
 // PUT request (update)
