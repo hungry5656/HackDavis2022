@@ -33,29 +33,53 @@ function updateDB(appt){
     
     // Only do this if doseNum > 1 
     // Otherwise lastApptDate = nextApptDate at the end of updateDB
-    obj.lastApptDate = obj.nextApptDate;
-    
-    // Higher order dose, need to calculate next date
-    let vaccineVec = vaccineJSON[obj.petType][obj.doseType]["O16W"]["Vac"];
-    let currentNum = obj.doseNum;
-    for (let i = 0; i < vaccineVec.length; i++){
-        if (vaccineVec[i][1] == 0){
-            let days = vaccineVec[i][0] * 7 + 1;
-            obj.nextApptDate = obj.nextApptDate.addDays(days);
-            //appt = updateAppt(appt, obj); 
-            //return appt;
-            break;
+    if (obj.nextApptDate == null){    
+        // Higher order dose, need to calculate next date
+        let vaccineVec = vaccineJSON[obj.petType][obj.doseType]["O16W"]["Vac"];
+        let currentNum = obj.doseNum;
+        for (let i = 0; i < vaccineVec.length; i++){
+            if (vaccineVec[i][1] == 0){
+                let days = vaccineVec[i][0] * 7 + 1;
+                obj.nextApptDate = obj.lastApptDate.addDays(days);
+                //appt = updateAppt(appt, obj); 
+                //return appt;
+                break;
+            }
+            if (currentNum - vaccineVec[i][1] < 0){
+                let days = vaccineVec[i][0] * 7 + 1;
+                obj.nextApptDate = obj.lastApptDate.addDays(days);
+                //appt = updateAppt(appt, obj); 
+                //return appt;
+                break;
+            } else {
+                currentNum -= vaccineVec[i][1];
+            }
         }
-        if (currentNum - vaccineVec[i][1] < 0){
-            let days = vaccineVec[i][0] * 7 + 1;
-            obj.nextApptDate = obj.nextApptDate.addDays(days);
-            //appt = updateAppt(appt, obj); 
-            //return appt;
-            break;
-        } else {
-            currentNum -= vaccineVec[i][1];
+    } else {
+        obj.lastApptDate = obj.nextApptDate;
+        // Higher order dose, need to calculate next date
+        let vaccineVec = vaccineJSON[obj.petType][obj.doseType]["O16W"]["Vac"];
+        let currentNum = obj.doseNum;
+        for (let i = 0; i < vaccineVec.length; i++){
+            if (vaccineVec[i][1] == 0){
+                let days = vaccineVec[i][0] * 7 + 1;
+                obj.nextApptDate = obj.nextApptDate.addDays(days);
+                //appt = updateAppt(appt, obj); 
+                //return appt;
+                break;
+            }
+            if (currentNum - vaccineVec[i][1] < 0){
+                let days = vaccineVec[i][0] * 7 + 1;
+                obj.nextApptDate = obj.nextApptDate.addDays(days);
+                //appt = updateAppt(appt, obj); 
+                //return appt;
+                break;
+            } else {
+                currentNum -= vaccineVec[i][1];
+            }
         }
     }
+    
     appt = updateAppt(appt, obj); 
     return appt;
 }
