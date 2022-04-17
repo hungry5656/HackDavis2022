@@ -19,28 +19,28 @@ function updateAppt(appt, obj) {
     return returnValue;
 }
 
+// Runs on the scheduled day of the appointment
 function updateDB(appt){
-    // update to the next dose in mongoDB
-    
-    /*// Convert appt into an obj
-    let obj = {
-        "doseNum": appt.doseNum,
-        "lastApptDate": Date(appt.lastApptDate), 
-        "nextApptDate": Date(appt.nextApptDate), 
-    }*/
-    let obj = appt; // implicitly cast appt to obj (?) 
-    console.log(obj); 
+    let obj = appt; // Implicitly cast appt to obj 
+    console.log(obj); // Debug
+
     obj.doseNum++; // We are now reminding for the (n + 1)th dose
     obj.lastApptDate = obj.nextApptDate; 
 
+    // Not sure if we need this block?
+    // If user has not had first dose,
+    // then they're scheduling their first dose and they will input nextApptDate
+    // and we will post with doseNum = 1 and we don't need to update the appt
+    // If user has had first dose, then this block does not execute 
     if (obj.doseNum == 1){
-        // want to notify of the first appointment
+        // dailyCheck.js will handle notification for this appointment 
+        // The nextApptDate should already be added during POST for this case
+        // We can simply update doseNum and end function
         appt = updateAppt(appt, obj); 
         return appt;
-    } else {
-
     }
 
+    // Higher order dose, need to calculate next date
     let vaccineVec = vaccineJSON[obj.petType][obj.doseType]["O16W"]["Vac"];
     let currentNum = obj.doseNum;
     for (let i = 0; i < vaccineVec.length; i++){
