@@ -2,10 +2,11 @@ import express from 'express';
 import mongoose from 'mongoose'; 
 import cors from 'cors';
 import dotenv from 'dotenv'; 
-import eventsRouter from './routes/appts.routes.js';
+import apptsRouter from './routes/appts.routes.js';
 import bodyParser from 'body-parser'; 
 
 import vaccineData from './data/vaccine.json';
+//import func from './filepath';
 
 const app = express();
 const port = 5000;
@@ -20,7 +21,7 @@ app.options('/update/:id', cors())
 app.options('/delete/:id', cors())
 
 app.use(bodyParser.json());
-app.use('/appts', eventsRouter); 
+app.use('/appts', apptsRouter); 
 
 app.listen(port, () => {
     console.log(`App listening at http://localhost:${port}`);

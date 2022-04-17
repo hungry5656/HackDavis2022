@@ -1,5 +1,5 @@
 import express from 'express'
-import Appointment from '../models/appts.model.js'; 
+import Appointment from '../models/appts.model.js';
 
 const router = express.Router(); 
 
@@ -20,7 +20,6 @@ router.route('/add').post((req, res) => {
     const newAppt = new Appointment(detailsObj);
 
     newAppt.save()
-    // henry(detailsObj)
     .then(() => res.json(newAppt))
     .catch(err => res.status(400).json('Error: ' + err));
     return req, res;
