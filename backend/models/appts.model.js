@@ -10,6 +10,7 @@ const apptSchema = new Schema(
     nextApptDate: { type: Date, required: true }, // subtract 7d from this to get notification date
         doseType: { type: String, required: true},
          doseNum: { type: Number, required: true},
+         petType: { type: String, required: true},
   },
   {
     timestamps: true,
