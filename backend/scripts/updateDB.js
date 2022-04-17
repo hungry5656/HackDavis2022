@@ -36,7 +36,7 @@ Date.prototype.addDays = function(days) {
     return date;
 }
 
-function dateConvertToStr(day0){
+function dateConvertToString(day0){
     let year = day0.getFullYear();
     let months = day0.getMonth() + 1;
     let days = day0.getDate() + 1;
