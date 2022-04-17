@@ -13,7 +13,7 @@ function sendEmail(data) {
     let mailOptions = {
         from: 'vaxremind@gmail.com',
         to: data.email,
-        subject: 'Vaccination reminder',
+        subject: 'Vaccination Reminder',
         html: data.content
     };
 
@@ -21,10 +21,11 @@ function sendEmail(data) {
         if (error) {
             return console.log(error);
         }
-        console.log('Email sent；', info.response);
+        console.log('Email sent;', info.response);
     });
 }
 
+/*
 let nickName, pet_type, vaccination_type;
 nickName = 'Vaccination Reminder'
 pet_type = 'cat'
@@ -40,3 +41,6 @@ let data = {
 }
 
 sendEmail(data) 
+*/
+
+export default sendEmail; 
