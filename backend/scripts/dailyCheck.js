@@ -1,6 +1,5 @@
 import mongoose from 'mongoose';
 import schedule from "node-schedule";
-import updateDB from "updateDB.js"; 
 import Appointment from '../models/appts.model'
 import updateDB from "./updateDB.js";
 /*
@@ -17,7 +16,7 @@ Nothing
 
 function dailyCheck(){
     let today = Date(); 
-    let todayDateString = dateConvertTostr(today); 
+    let todayDateString = dateConvertToString(today); 
 
     // Find all documents of type Appointment with nextApptDate = todayDateString
     Appointment.find({nextApptDate: todayDateString})
