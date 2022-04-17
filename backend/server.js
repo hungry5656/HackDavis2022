@@ -3,10 +3,8 @@ import mongoose from 'mongoose';
 import cors from 'cors';
 import dotenv from 'dotenv'; 
 import apptsRouter from './routes/appts.routes.js';
-import bodyParser from 'body-parser'; 
-
-import vaccineData from './data/vaccine.json';
-//import func from './filepath';
+import bodyParser from 'body-parser';
+import schedule from "node-schedule";
 
 const app = express();
 const port = 5000;
