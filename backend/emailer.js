@@ -1,17 +1,17 @@
-const nodemailer = require('nodemailer');
-var schedule = require('node-schedule');
+import nodemailer from "nodemailer"; 
+import schedule from "node-schedule"; 
 
 function sendEmail(data) {
     let transporter = nodemailer.createTransport({
         service: 'gmail',
         auth: {
-            user: 'whhu02@gmail.com',
-            pass: 'yzvydfoallxaazub',
+            user: 'vaxremind@gmail.com',
+            pass: 'yorltvywmztxutlf',
         }
     });
 
     let mailOptions = {
-        from: '"whhu02@gmail.com',
+        from: 'vaxremind@gmail.com',
         to: data.email,
         subject: 'Vaccination reminder',
         html: data.content
@@ -26,12 +26,12 @@ function sendEmail(data) {
 }
 
 let nickName, pet_type, vaccination_type;
-nickName = 'Wenhao'
+nickName = 'Vaccination Reminder'
 pet_type = 'cat'
 vaccination_type = 'Rabies'
 
 let data = {
-    email: 'whhu@ucdavis.edu',
+    email: 'vaxremind@ucdavis.edu',
     content: ` <p style="text-indent: 2em;"> Dear ${nickName} </p>
     <p style="text-indent: 2em;">We’re so happy your ${pet_type} will be receiving ${vaccination_type} vaccination tomorrow.</p>
     <p style="text-indent: 2em;">Don't forget to bring pet to receive the vaccination</p>
