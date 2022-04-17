@@ -7,6 +7,18 @@ import vaccineJSON from "../Data/vaccine.js";
     vaccineJSON = response.json(); 
 });*/
 
+function updateAppt(appt, obj) {
+    let returnValue = null; 
+    console.log(obj); // Debug
+    appt.overwrite(obj);
+    appt.save()
+    .then((updatedAppt) => {
+        console.log("Updated appointment successfully")
+        returnValue = updatedAppt; 
+    }).catch((err) => console.log("Something went wrong, " + err));
+    return returnValue;
+}
+
 function updateDB(appt){
     // update to the next dose in mongoDB
     
@@ -16,33 +28,41 @@ function updateDB(appt){
         "lastApptDate": Date(appt.lastApptDate), 
         "nextApptDate": Date(appt.nextApptDate), 
     }*/
-    let obj = appt; 
-
-    obj.doseNum++;
-    obj.lastApptDate = obj.nextApptDate;
+    let obj = appt; // implicitly cast appt to obj (?) 
+    console.log(obj); 
+    obj.doseNum++; // We are now reminding for the (n + 1)th dose
+    obj.lastApptDate = obj.nextApptDate; 
 
     if (obj.doseNum == 1){
-        // want to remind on the first appointment
-        return;
+        // want to notify of the first appointment
+        appt = updateAppt(appt, obj); 
+        return appt;
+    } else {
+
     }
-    let vaccineVec = vaccineJSON[petType][doseType]["O16W"]["Vac"];
+
+    let vaccineVec = vaccineJSON[obj.petType][obj.doseType]["O16W"]["Vac"];
     let currentNum = obj.doseNum;
     for (let i = 0; i < vaccineVec.length; i++){
         if (vaccineVec[i][1] == 0){
             let days = vaccineVec[i][0] * 7 + 1;
             obj.nextApptDate = obj.nextApptDate.addDays(days);
-            return;
+            //appt = updateAppt(appt, obj); 
+            //return appt;
+            break;
         }
         if (currentNum - vaccineVec[i][1] < 0){
             let days = vaccineVec[i][0] * 7 + 1;
             obj.nextApptDate = obj.nextApptDate.addDays(days);
-            return;
+            //appt = updateAppt(appt, obj); 
+            //return appt;
+            break;
         } else {
             currentNum -= vaccineVec[i][1];
         }
     }
-    appt.overwrite(appt); 
-    return;
+    appt = updateAppt(appt, obj); 
+    return appt;
 }
 
 Date.prototype.addDays = function(days) {
