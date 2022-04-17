@@ -4,7 +4,8 @@ import cors from 'cors';
 import dotenv from 'dotenv'; 
 import apptsRouter from './routes/appts.routes.js';
 import bodyParser from 'body-parser';
-import schedule from "node-schedule";
+import schedule, { RecurrenceRule } from "node-schedule";
+import dailyCheck from "./scripts/dailyCheck.js"
 
 const app = express();
 const port = 5000;
@@ -32,4 +33,10 @@ mongoose.connect(uri, {useNewUrlParser: true, useUnifiedTopology: true});
 const connection = mongoose.connection;
 connection.once("open", () => {
     console.log("MongoDB database connection established successfully.");
+});
+const rule = new RecurrenceRule();
+rule.day = 1;
+
+const job = schedule.scheduleJob(rule, function(){
+    dailyCheck();
 });
