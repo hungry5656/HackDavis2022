@@ -2,9 +2,9 @@ import express from 'express';
 import mongoose from 'mongoose'; 
 import cors from 'cors';
 import dotenv from 'dotenv'; 
-import apptsRouter from './routes/appts.routes.js';
 import bodyParser from 'body-parser';
 import schedule, { RecurrenceRule } from "node-schedule";
+import apptsRouter from './routes/appts.routes.js';
 import dailyCheck from "./scripts/dailyCheck.js"
 
 const app = express();

@@ -1,9 +1,18 @@
 import mongoose from 'mongoose';
 
 const vaccineData = require("../Data/vaccine.json")
-function updateDB(obj){
+function updateDB(appt){
     // update to the next dose in mongoDB
     const vaccineJSON = vaccineData;
+    
+    /*// Convert appt into an obj
+    let obj = {
+        "doseNum": appt.doseNum,
+        "lastApptDate": Date(appt.lastApptDate), 
+        "nextApptDate": Date(appt.nextApptDate), 
+    }*/
+    let obj = appt; 
+
     obj.doseNum++;
     obj.lastApptDate = obj.nextApptDate;
 
@@ -27,6 +36,7 @@ function updateDB(obj){
             currentNum -= vaccineVec[i][1];
         }
     }
+    appt.overwrite(appt); 
     return;
 }
 
